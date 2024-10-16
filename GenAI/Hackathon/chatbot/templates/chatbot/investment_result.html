@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2 style="color:#000023">Investment Analysis Result</h2>
+    <div class="card mb-4">
+        <div class="card-body">
+            {{ response|safe }}
+        </div>
+    </div>
+    
+    
+    <div class="chatbot-section mb-4">
+        <h3>Ask the Guidebot:</h3>
+        <form method="POST" action="{% url 'chatbot' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" id="user_question" name="user_question" class="form-control" placeholder="Type your question here" required>
+            </div>
+            <button type="submit" class="btn btn-primary mt-2">Ask</button>
+        </form>
+
+        {% if chatbot_answer %}
+            <h4 class="mt-4">Guidebot's Response:</h4>
+            <div class="alert alert-info">
+                <p>{{ chatbot_answer|safe }}</p>
+            </div>
+        {% endif %}
+    </div>
+    
+    <a href="{% url 'home' %}" class="btn btn-secondary">Back to Home</a>
+{% endblock %}

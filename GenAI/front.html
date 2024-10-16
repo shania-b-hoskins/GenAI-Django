@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <style>
+        body {
+            font-family: Roboto, sans-serif; /* Choose a suitable font */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000023; /* Choose a background color */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 40px; /* Adjust padding for more space */
+            box-shadow: 0px 0px 10px rgba(70, 69, 69, 0.2);
+            width: 80%;
+            max-width: 600px;
+            position: relative; /* For positioning pseudo-elements */
+        }
+
+        h1 {
+            font-family: sans-serif; /* Change the font family */
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 36px; /* Adjust font size as needed */
+            font-weight: bold;
+        }
+        p {
+            font-family: 'Open Sans', sans-serif;
+            margin-bottom: 40px;
+            color: #666;
+            font-size: 18px; 
+            font-style: italic;
+            position: relative; /* For positioning pseudo-elements */
+            padding: 0 40px; /* Space for emojis */
+        }
+
+        img {
+            width: 100%; /* Make image responsive */
+            max-width: 450px; /* Maximum width */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            border: 2px solid #05000f; /* Add a border */
+            background-color: transparent;
+            color: #000023;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+            margin: 0 10px; /* Space between buttons */
+        }
+
+        button:hover {
+            background-color: #000023;
+            color: #fff;
+        }
+
+        /* Separate pseudo-elements for before and after */
+        p::before {
+            content: "💰";
+            position: absolute;
+            left: -30px; /* Adjust as needed */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px; /* Adjust emoji size */
+            color: #ff0202; /* Emoji color */
+        }
+
+        p::after {
+            content: "♥";
+            position: absolute;
+            right: -30px; /* Adjust as needed */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px; /* Adjust emoji size */
+            color: #ff0202; /* Emoji color */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            p::before, p::after {
+                display: none; /* Hide emojis on small screens */
+            }
+
+            img {
+                max-width: 100%;
+                width: 80%;
+            }
+
+            button {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Website</h1>
+        
+        <img src="C:\Users\shani\GenAI\Hackathon\chatbot\templates\chatbot\stock.gif" alt="Your Animated Logo">
+        <p>Your smart investing partner—analyzing trends while you sip your coffee</p>
+        <div>
+            <a href="/login/" style="text-decoration: none;">
+                <button>Login</button>
+            </a>
+            <a href="/signup/" style="text-decoration: none;">
+                <button>Sign Up</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

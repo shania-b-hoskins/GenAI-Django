@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 style="color:#000023">Welcome to Stock Stategies!</h1>
+    {% if user.is_authenticated %}
+        <p>You are logged in as {{ user.username }}.</p>
+        <p><a href="{% url 'chatbot' %}" class="btn btn-success">Go to Guidebot</a></p>
+        <p>Haven't filled out your questionnaire? <a href="{% url 'choose_investor_type' %}"> Click here. </a> </p>
+    {% else %}
+        <p>Please <a href="{% url 'login' %}">login</a> or <a href="{% url 'signup' %}">sign up</a> to get started.</p>
+       
+    {% endif %}
+{% endblock %}

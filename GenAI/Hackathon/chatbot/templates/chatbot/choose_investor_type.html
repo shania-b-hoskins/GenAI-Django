@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Select Your Investor Type</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <button type="submit" name="investor_type" value="First-Time" class="btn btn-primary">First-Time Investor</button>
+            <button type="submit" name="investor_type" value="Experienced" class="btn btn-secondary">Experienced Investor</button>
+        </div>
+    </form>
+{% endblock %}
